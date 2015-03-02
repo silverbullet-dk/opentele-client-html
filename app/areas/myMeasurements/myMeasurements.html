@@ -1,0 +1,33 @@
+<section id="my-measurements-container"
+         class="body-row-color">
+    <div class="container">
+        <div class="sub-container"
+             ng-controller="MyMeasurementsCtrl">
+
+            <div class="text-center my-measurements-container">
+
+                <h5 id="no-measurements"
+                    ng-hide="model.measurements.length > 0">
+                    {{'MY_MEASUREMENTS_NO_MEASUREMENTS' | translate}}
+                </h5>
+
+                <nav id="measurements-list"
+                     class="text-center list-container"
+                     ng-show="model.measurements.length > 0">
+                    <ul class="list-unstyled">
+                        <li id="measurements-items"
+                            ng-repeat="measurementRef in model.measurements">
+                            <a href=""
+                               class="button"
+                               ng-click="showMeasurement($index)">
+                                {{measurementRef.name | translate}}
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </div>
+    </div>
+</section>

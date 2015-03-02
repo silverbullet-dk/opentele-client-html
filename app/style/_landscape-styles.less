@@ -1,0 +1,377 @@
+// ==========================================================================
+// Desktop Custom Styles
+// ==========================================================================
+
+// layout
+
+.header-row-color {
+  background-color: @header-row-color;
+  color: @white;
+}
+
+.body-row-color {
+  background-color: @body-row-color;
+  color: @white;
+}
+
+// general
+
+.sub-container {
+  .text-center;
+  .narrow-row;
+}
+
+form {
+  width: @desktop-container;
+  margin: 0 auto;
+}
+
+// loading gif
+
+#loader-overlay {
+  top:55%;
+  position: absolute;
+  left: 50%;
+  z-index:50;
+}
+#loader-overlay div {
+  position: relative;
+  left: -50%;
+  border: 1px solid #666;
+  background-color: #000;
+  border-radius:5px;
+  min-width:300px;
+  z-index:60;
+}
+
+// headings
+
+#header-container {
+  padding-bottom: 0em;
+  margin-bottom: -1em;
+}
+
+.title {
+  color: @title-color;
+}
+
+// header
+
+.header {
+  padding-bottom: 5px;
+}
+
+.header button {
+  margin-right: 2.5px;
+  margin-left: 2.5px;
+}
+
+// footer
+
+footer {
+  .font-size(8);
+}
+
+// lists
+
+.list-container {
+  padding-top: 15px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.list-container li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.list-container .button {
+  width:70%;
+}
+
+.h5-short {
+  width: 190px;
+}
+
+// errors
+
+.error-message {
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  color: @error-message-color;
+}
+
+// login
+
+.login-fields input {
+  display:block;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+}
+
+.login-fields label {
+  display:block;
+}
+
+// questionnaire
+
+.questionnaire-container {
+  padding-top: 15px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+label,
+.label {
+  color: @label-color;
+}
+
+.radio-group {
+  width: 50%;
+  .line-height(10);
+}
+
+.radio-label {
+  color: @label-color;
+  .font-size(12);
+}
+
+#question-buttons {
+  padding-top: 25px;
+}
+
+#question-buttons button {
+  margin-right: 2.5px;
+  margin-left: 2.5px;
+}
+
+.questionnaire-fields {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.questionnaire-fields div {
+  display: block;
+}
+
+.questionnaire-fields ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.questionnaire-fields label {
+  .left;
+  .text-left;
+  width:100%;
+}
+
+.questionnaire-fields .radio-label {
+  .text-left;
+  margin-left: 2em;
+}
+
+.questionnaire-fields input[type=number] {
+  width: 100%;
+  .left;
+}
+
+.questionnaire-fields input[type=checkbox] {
+  .left;
+  margin-left: 0.5em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.questionnaire-fields input[type=radio] {
+  .left;
+  margin-left: 0.5em;
+  margin-top: 0.40em;
+  margin-bottom: 0.40em;
+}
+
+// thread
+
+.bubble-container {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.bubble-container li {
+  padding-top: 0em;
+  padding-bottom: 0em;
+}
+
+@bubble-width: 450px;
+
+.bubble {
+  margin: 0 auto;
+  position: relative;
+  width: @bubble-width;
+  min-height: 80px;
+  padding: 0px;
+  background: @bubble-color;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.bubble-after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-color: transparent @bubble-color;
+  display: block;
+  width: 0;
+  z-index: 1;
+  top: 18px;
+}
+
+.bubble p {
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  color: @bubble-text-color;
+}
+
+// bubble left
+
+.bubble-left {
+  right: 180px;
+}
+
+.bubble-left-marked {
+  .bubble-left;
+  background: @bubble-marked-color;
+}
+
+.bubble-left-after {
+  .bubble-after;
+  border-width: 15px 15px 15px 0;
+  left: -15px;
+}
+
+.bubble-left:after {
+  .bubble-left-after;
+}
+
+.bubble-left-marked:after {
+  .bubble-left-after;
+  border-color: transparent @bubble-marked-color;
+}
+
+// bubble right
+
+.bubble-right {
+  left: 180px;
+  background: @bubble-color;
+}
+
+.bubble-right-marked {
+  .bubble-right;
+  background: @bubble-marked-color;
+}
+
+.bubble-right-after {
+  .bubble-after;
+  border-width: 15px 0 15px 15px;
+  left: @bubble-width;
+  right: -15px;
+}
+
+.bubble-right:after {
+  .bubble-right-after;
+}
+
+.bubble-right-marked:after {
+  .bubble-right-after;
+  border-color: transparent @bubble-marked-color;
+}
+
+// new message
+
+.new-message-fields {
+  width: 100%;
+  margin:0 auto;
+}
+
+.new-message-fields input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  width: 40%;
+}
+
+.new-message-fields textarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  width: 40%;
+}
+
+.new-message-fields label {
+  display: block;
+}
+
+.new-message-fields .button {
+  margin-top: 1.5em;
+}
+
+// acknowledgements
+
+@acknowledgement-width: 650px;
+
+.acknowledgements-container {
+  .bubble-container;
+}
+
+.acknowledgements-container li {
+  padding-top: 0em;
+  padding-bottom: 0em;
+}
+
+.acknowledgement {
+  .bubble;
+  width: @acknowledgement-width;
+  color: @acknowledgement-color;
+}
+
+.acknowledgement p {
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  color: @acknowledgement-text-color;
+}
+
+// my measurements
+
+.table-container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.graph-container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.popup {
+  color: #333333;
+  display: block;
+  position: absolute;
+  width: 480px;
+  height: 220px;
+  padding: 0.5em;
+  border: 1px solid #333333;
+  background-color: white;
+  z-index:1002;
+  overflow: auto;
+}
+
+.popup li {
+  .text-left;
+  .font-size(8);
+  .line-height(10);
+}

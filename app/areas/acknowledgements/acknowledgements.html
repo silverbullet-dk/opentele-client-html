@@ -1,0 +1,33 @@
+<section id="acknowledgements-container"
+         class="body-row-color">
+    <div class="container">
+        <div class="sub-container"
+             ng-controller="AcknowledgementsCtrl">
+
+            <div class="text-center acknowledgements-container">
+
+                <h5 id="no-acknowledgements"
+                    ng-hide="model.acknowledgements.length > 0">
+                    {{'ACKNOWLEDGEMENTS_NO_ACKNOWLEDGEMENTS' | translate}}
+                </h5>
+
+                <div id="acknowledgement-list"
+                     class="text-center"
+                     ng-show="model.acknowledgements.length > 0">
+                    <ul class="list-unstyled">
+                        <li id="acknowledgement-items"
+                            ng-repeat="acknowledgement in model.acknowledgements">
+                            <div class="acknowledgement">
+                                <p class="text-left">
+                                    {{acknowledgement.message}}
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

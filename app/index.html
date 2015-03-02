@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="opentele" class="no-js" ng-strict-di>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OpenTele</title>
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div navigation-header></div>
+<div ng-include src="'areas/header/title.html'"></div>
+
+<div id="loader-overlay">
+    <img class="loading-widget" src="images/loader.gif" alt="Loading">
+</div>
+
+<div ng-controller="AppCtrl">
+    <div ng-view></div>
+</div>
+
+<script src="dist/libs.js"></script>
+<script src="dist/app.js"></script>
+</body>
+</html>

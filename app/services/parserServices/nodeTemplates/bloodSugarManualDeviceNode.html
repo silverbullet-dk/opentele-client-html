@@ -1,0 +1,33 @@
+<h2>{{nodeModel.heading}}</h2>
+<form name="bloodSugarForm" class="text-center">
+    <fieldset class="questionnaire-fields">
+        <div>
+            <label for="count">{{ "BLOOD_SUGAR" | translate }}</label>
+            <input id="count"
+                   type="number"
+                   min="0"
+                   max="999"
+                   name="count"
+                   autocomplete="off"
+                   ng-model="nodeModel.bloodSugarManualMeasurement" required />
+        </div>
+        <div ng-show="bloodSugarForm.count.$dirty && bloodSugarForm.count.$invalid">
+            <small class="error-message"
+                   ng-show="bloodSugarForm.count.$error.required">
+                {{ "BLOOD_SUGAR_COUNT_ERROR_MESSAGE" | translate }}
+            </small>
+        </div>
+        <div>
+            <label for="beforeMeal">{{ "BEFORE_MEAL" | translate }}</label>
+            <input id="beforeMeal"
+                   type="checkbox"
+                   ng-model="nodeModel.bloodSugarManualBeforeMeal"/>
+        </div>
+        <div>
+            <label for="afterMeal">{{ "AFTER_MEAL" | translate }}</label>
+            <input id="afterMeal"
+                   type="checkbox"
+                   ng-model="nodeModel.bloodSugarManualAfterMeal"/>
+        </div>
+    </fieldset>
+</form>

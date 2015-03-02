@@ -1,0 +1,35 @@
+<section id="questionnaire-container"
+         class="body-row-color"
+         ng-controller="QuestionnaireCtrl">
+    <div class="container">
+        <div class="sub-container">
+
+            <div class="text-center questionnaire-container">
+
+                <div id="question-text"
+                     class="text-center"
+                     bind-dynamic-html="model.questionHtml"></div>
+
+                <div id="question-buttons"
+                     class="row text-center">
+                    <button id="question-left-button"
+                            class="button"
+                            ng-show="model.leftButtonShow"
+                            ng-disabled="!model.leftButtonValidate()"
+                            ng-click="model.leftButtonClick()">{{model.leftButtonText | translate}}</button>
+                    <button id="question-center-button"
+                            class="button"
+                            ng-show="model.centerButtonShow"
+                            ng-disabled="!model.centerButtonValidate()"
+                            ng-click="model.centerButtonClick()">{{model.centerButtonText | translate}}</button>
+                    <button id="question-right-button"
+                            class="button"
+                            ng-show="model.rightButtonShow"
+                            ng-disabled="!model.rightButtonValidate()"
+                            ng-click="model.rightButtonClick()">{{model.rightButtonText | translate}}</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

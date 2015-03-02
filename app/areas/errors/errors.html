@@ -1,0 +1,19 @@
+<section id="error-container"
+         class="body-row-color"
+         ng-controller="ErrorsCtrl">
+    <div class="container">
+        <div class="sub-container">
+
+            <h5 class="text-center error-message">
+                {{model.description | translate}}
+            </h5>
+            <div class="row text-center">
+                <button class="button"
+                        ng-click="leaveErrorPage()">
+                    {{model.okButtonText | translate}}
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>

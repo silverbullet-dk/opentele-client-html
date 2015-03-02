@@ -1,0 +1,15 @@
+<form name="#form_name#" class="text-center">
+    <fieldset class="questionnaire-fields">
+        <div class="narrow-row"
+             ng-repeat="radioItem in nodeModel.radioItems">
+            <input id="radio-items"
+                   name="radio-items"
+                   type="radio"
+                   value="{{radioItem.value}}"
+                   ng-model="nodeModel.radioSelected">
+            <div class="radio-label" for="radio-items">
+              {{radioItem.label}}<br/>
+            </div>
+        </div>
+    </fieldset>
+</form>

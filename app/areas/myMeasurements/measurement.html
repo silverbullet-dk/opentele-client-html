@@ -1,0 +1,120 @@
+<section id="measurement-container"
+         class="body-row-color">
+    <div class="container">
+        <div class="sub-container"
+             ng-controller="MeasurementCtrl">
+
+            <div class="text-center measurement-container">
+
+                <h2>{{model.measurement.name | translate}}</h2>
+
+                <div class="narrow-row block">
+                    <button class="narrow-button"
+                            ng-repeat="filter in model.filters"
+                            ng-class="{ 'marked-narrow-button': filter.filter === model.filter }"
+                            ng-click="showFilter(filter.filter)">
+                        {{filter.label | translate}}
+                    </button>
+                </div>
+
+                <div ng-show="(!model.shouldHideTable && model.measurements.length === 0) ||
+                              (!model.shouldHideGraph && (model.series === undefined ||
+                              model.series === null))">
+                    <h2>{{'NO_MEASUREMENTS_AVAILABLE' | translate}}</h2>
+                </div>
+
+                <div class="graph-container">
+                    <div class="narrow-row">
+                        <div chart="model.series"
+                             chart-options="model.options"
+                             ng-hide="model.shouldHideGraph"></div>
+                    </div>
+                    <div class="narrow-row">
+                        <div chart="model.standardDaySeries"
+                             chart-options="model.standardDayOptions"></div>
+                    </div>
+                </div>
+
+                <div class="table-container narrow-row">
+
+                    <div ng-hide="model.measurements.length === 0 || model.shouldShowStandardDayTable">
+                        <table id="measurements-table">
+                            <thead>
+                            <tr>
+                                <th>{{"TIMESTAMP" | translate}}</th>
+                                <th>{{model.unit | translate}}</th>
+                            </tr>
+                            </thead>
+                            <tr id="measurement-item"
+                                ng-repeat="measurement in model.measurements">
+                                <td>{{measurement.timestamp | amDateFormat:'lll'}}</td>
+                                <td>{{measurement.measurement}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div ng-show="model.shouldShowStandardDayTable && model.measurementDates.length > 0">
+                        <table id="standard-day-measurements-table">
+                            <thead>
+                            <tr>
+                                <th>{{"DATE" | translate}}</th>
+                                <th>{{"1970-01-01T00:00:00" | amDateFormat: 'LT'}}-{{"1970-01-01T04:59:00" | amDateFormat: 'LT'}}</th>
+                                <th>{{"1970-01-01T05:00:00" | amDateFormat: 'LT'}}-{{"1970-01-01T10:59:00" | amDateFormat: 'LT'}}</th>
+                                <th>{{"1970-01-01T11:00:00" | amDateFormat: 'LT'}}-{{"1970-01-01T16:59:00" | amDateFormat: 'LT'}}</th>
+                                <th>{{"1970-01-01T17:00:00" | amDateFormat: 'LT'}}-{{"1970-01-01T23:59:00" | amDateFormat: 'LT'}}</th>
+                            </tr>
+                            </thead>
+                            <tr id="measurement-date-item"
+                                ng-repeat="measurementDate in model.measurementDates">
+                                <td>{{measurementDate.date | amDateFormat:'ll'}}</td>
+                                <td>
+                                    <div ng-repeat="measurement in measurementDate.night">
+                                        <div ng-click="showPopup(measurement, $event)"
+                                             measurement="measurement"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div ng-repeat="measurement in measurementDate.morning">
+                                        <div ng-click="showPopup(measurement, $event)"
+                                             measurement="measurement"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div ng-repeat="measurement in measurementDate.afternoon">
+                                        <div ng-click="showPopup(measurement, $event)"
+                                             measurement="measurement"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div ng-repeat="measurement in measurementDate.evening">
+                                        <div ng-click="showPopup(measurement, $event)"
+                                             measurement="measurement"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="popup"
+                         ng-style="{ left: model.popupOffsetX, top: model.popupOffsetY }"
+                         ng-click="hidePopup()"
+                         ng-show="model.showPopup">
+                        <h6>{{"BLOOD_SUGAR_MEASUREMENT" | translate}}</h6>
+                        <ul class="list-unstyled">
+                            <li>{{"TIMESTAMP" | translate}}: {{model.popupMeasurement.timestamp | amDateFormat: "LLL"}}</li>
+                            <li>{{"VALUE" | translate}}: {{model.popupMeasurement.measurement.value}}</li>
+                            <li>{{"BEFORE" | translate}}: {{model.popupMeasurement.measurement.isBeforeMeal}}</li>
+                            <li>{{"AFTER" | translate}}: {{model.popupMeasurement.measurement.isAfterMeal}}</li>
+                            <li>{{"CONTROL" | translate}}: {{model.popupMeasurement.measurement.isControlMeasurement}}</li>
+                            <li>{{"OTHER" | translate}}: {{model.popupMeasurement.measurement.otherInformation}}</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

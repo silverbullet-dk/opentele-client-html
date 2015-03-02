@@ -1,0 +1,18 @@
+<form name="#form_name#" class="text-center">
+	<fieldset class="questionnaire-fields">
+		<div class="block">
+			<label for="#input_name#">#label#</label>
+			<input id="#input_name#"
+                   type="#type#"
+                   step="#step#"
+                   name="#input_name#"
+                   autocomplete="off"
+                   ng-model="nodeModel.#input_name#" required />
+		</div>
+		<div class="block"
+             ng-show="#form_name#.#input_name#.$dirty && #form_name#.#input_name#.$invalid">
+			<small class="error-message"
+                   ng-show="#form_name#.#input_name#.$error.required">{{ "EDIT_TEXT_ELEMENT_ERROR_MESSAGE" | translate }}</small>
+		</div>
+	</fieldset>
+</form>

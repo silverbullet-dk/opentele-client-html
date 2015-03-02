@@ -1,0 +1,26 @@
+<header>
+    <div id="header-container"
+            class="container header header-row-color"
+            ng-controller="HeaderCtrl"
+            ng-show="headerModel.showHeader">
+        <nav class="sub-container">
+            <button id="back-button"
+                    class="button"
+                    ng-show="headerModel.showBackButton"
+                    ng-click="goBack()">
+                {{ 'NAVIGATION_BACK_BUTTON' | translate }}
+            </button>
+            <button id="menu-button"
+                    class="button"
+                    ng-hide="headerModel.hideMainMenuButton"
+                    ng-click="goMainMenu()">
+                {{ 'NAVIGATION_MAIN_MENU_BUTTON' | translate }}
+            </button>
+            <button id="logout-button"
+                    class="button"
+                    ng-click="goLogout()">
+                {{ 'NAVIGATION_LOGOUT_BUTTON' | translate }}
+            </button>
+        </nav>
+    </div>
+</header>

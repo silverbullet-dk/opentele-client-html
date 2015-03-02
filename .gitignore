@@ -1,0 +1,25 @@
+# dot-gitignore
+
+# libraries
+node_modules/
+bower_components/
+
+# logging
+logs/*
+test_out/
+npm-debug.log
+
+# auto generated stuff
+tmp/
+app/style.css
+app/dist/
+app/config.js
+dist/
+docs/
+
+# Idea garbage
+.idea
+*.iml
+
+# OS/x garbage
+.DS_Store

@@ -1,0 +1,22 @@
+<h2>{{nodeModel.heading}}</h2>
+<form name="crpForm" class="text-center">
+    <fieldset class="questionnaire-fields">
+
+        <div>
+            <label for="lt5">{{ "LT5" | translate }}</label>
+            <input id="lt5"
+                   name="lt5"
+                   type="checkbox"
+                   ng-model="nodeModel.crpLt5Measurement"/>
+        </div>
+        <div>
+            <label for="count">{{ "OR_CRP" | translate }}</label>
+            <input id="count"
+                   type="number"
+                   name="count"
+                   autocomplete="off"
+                   ng-model="nodeModel.crpCountMeasurement"/>
+        </div>
+
+    </fieldset>
+</form>

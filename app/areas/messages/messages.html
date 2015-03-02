@@ -1,0 +1,33 @@
+<section id="messages-container"
+         class="body-row-color">
+    <div class="container">
+        <div class="sub-container"
+             ng-controller="MessagesCtrl">
+
+            <div class="text-center messages-container">
+
+                <h5 id="no-threads"
+                    ng-hide="model.threads.length > 0">
+                    {{'MESSAGES_NO_THREADS' | translate}}
+                </h5>
+
+                <nav id="thread-list"
+                     class="text-center list-container"
+                     ng-show="model.threads.length > 0">
+                    <ul class="list-unstyled">
+                        <li id="thread-items"
+                            ng-repeat="threadRef in model.threads">
+                            <a href=""
+                               class="button"
+                               ng-click="showThread($index)">
+                                {{threadRef.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </div>
+    </div>
+</section>

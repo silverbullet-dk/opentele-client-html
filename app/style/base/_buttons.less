@@ -1,0 +1,76 @@
+// ==========================================================================
+// Base – Custom Buttons
+// ==========================================================================
+
+.button {
+  border: 0;
+  padding: 1em 2em;
+  background-color: @button-color;
+  color: @button-text-color;
+  font-weight: @button-font-weight;
+  text-decoration: none;
+  &:extend(.text-center);
+  &:extend(.inline-block);
+  position: relative;
+}
+
+.button:hover {
+  background-color: @button-hover-color;
+  color: @button-text-color;
+}
+.button:active {
+  top: 1px;
+}
+
+.marked-button {
+  background-color: @marked-button-color;
+  color: @marked-button-text-color;
+}
+
+.grey-button {
+  background-color: @grey-button-color;
+  color: @grey-button-text-color;
+}
+.grey-button:hover {
+  background-color: @grey-button-hover-color;
+}
+
+.button[disabled],
+.button.disabled {
+  background-color: @disabled-button-color;
+  color: @disabled-button-text-color;
+}
+
+.narrow-button {
+  .button;
+  padding: 0.25em 0.25em;
+  margin: 0.25em 0.125em;
+}
+
+.marked-narrow-button {
+  background-color: @disabled-button-color;
+  color: @disabled-button-text-color;
+}
+
+.unstyled-button {
+  .font-size(@font-size);
+  color: @link-color;
+  text-decoration: underline;
+  border: 0;
+  background: transparent;
+  height: auto;
+  padding: 0;
+  margin: 0.25em 0.5em;
+  cursor: pointer;
+  outline: 0;
+  &:hover {
+    text-decoration: none;
+  } // end hover
+}
+
+.unstyled-button[disabled],
+.unstyled-button.disabled {
+  text-decoration: none;
+  color: @unstyled-disabled-button-text-color;
+  background-color: @unstyled-disabled-button-color;
+}

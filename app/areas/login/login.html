@@ -1,0 +1,63 @@
+<section id="login-container"
+         class="body-row-color">
+    <div class="container">
+        <div class="sub-container"
+             ng-controller="LoginCtrl">
+
+            <h5 class="text-center error-message">
+                {{model.errorMessage}}
+            </h5>
+
+            <form id="login-form"
+                  class="text-center"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  ng-show="model.showLoginForm"
+                  ng-submit="submit()">
+                <fieldset class="login-fields text-center">
+
+                    <div class="inline-block mobile-full">
+                        <label for="username">
+                            {{'LOGIN_FORM_USERNAME' | translate}}
+                        </label>
+                        <input id="username"
+                               autofocus="true"
+                               type="text"
+                               size="13"
+                               autocomplete="off"
+                               autocorrect="off"
+                               autocapitalize="off"
+                               ng-model="model.username"/>
+                    </div>
+
+                    <div class="inline-block mobile-full">
+                        <label for="password">
+                            {{'LOGIN_FORM_PASSWORD' | translate}}
+                        </label>
+                        <input id="password"
+                               type="text"
+                               size="13"
+                               autocomplete="off"
+                               autocorrect="off"
+                               autocapitalize="off"
+                               ng-model="model.password"/>
+                    </div>
+
+                    <div class="inline-block mobile-full">
+                        <input id="submit"
+                               class="button"
+                               type="submit"
+                               value="{{'LOGIN_LOGIN_BUTTON' | translate}}"/>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <small>OpenTele: v<span version></span>, server: <span server></span></small>
+</footer>

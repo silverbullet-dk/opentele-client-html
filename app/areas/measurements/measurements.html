@@ -1,0 +1,32 @@
+<section id="measurements-container"
+         class="body-row-color">
+    <div class="container">
+        <div class="sub-container"
+             ng-controller="MeasurementsCtrl">
+
+            <h2>{{'CHOOSE_QUESTIONNAIRE' | translate}}</h2>
+
+            <h5 id="no-questionnaires"
+                ng-hide="model.questionnaires.length > 0">
+                {{'QUESTIONNAIRES_NO_QUESTIONNAIRES' | translate}}
+            </h5>
+
+            <nav id="questionnaire-list"
+                 class="text-center list-container"
+                 ng-show="model.questionnaires.length > 0">
+                <ul class="list-unstyled">
+                    <li id="questionnaire-items"
+                        ng-repeat="questionnaireRef in model.questionnaires">
+                        <a href=""
+                           class="button"
+                           ng-class="{ 'marked-button': questionnaireRef.marked }"
+                           ng-click="showQuestionnaire($index)">
+                            {{questionnaireRef.name}} (ver. {{questionnaireRef.version}})
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</section>

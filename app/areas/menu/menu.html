@@ -1,0 +1,22 @@
+<section id="menu-container"
+         class="body-row-color"
+         ng-controller="MenuCtrl">
+    <div class="container">
+        <div class="sub-container">
+
+            <nav id="menu-list"
+                 class="text-center list-container">
+                <ul class="list-unstyled">
+                    <li id="menu-items"
+                        ng-repeat="menuItem in model.menuItems">
+                        <a class="button"
+                           ng-href={{menuItem.url}}>
+                            {{menuItem.name}}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</section>

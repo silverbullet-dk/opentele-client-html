@@ -1,0 +1,20 @@
+<h2>{{nodeModel.heading}}</h2>
+<form name="inputForm" class="text-center">
+    <fieldset class="questionnaire-fields">
+        <div>
+            <ul>
+                <li class="narrow-row list-unstyled"
+                    ng-repeat="level in nodeModel.measurementSelections">
+                    <input id="radio-{{$index}}"
+                           name="radio-{{$index}}"
+                           type="radio"
+                           ng-model="nodeModel.measurement"
+                           value="{{$index}}">
+                    <div class="radio-label">
+                        {{ level | translate}}<br/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </fieldset>
+</form>

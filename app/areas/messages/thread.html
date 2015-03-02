@@ -1,0 +1,53 @@
+<section id="thread-container"
+         class="body-row-color">
+    <div class="container">
+        <div class="sub-container"
+             ng-controller="ThreadCtrl">
+
+            <div class="text-center thread-container">
+
+                <h2>{{model.thread.name}}</h2>
+
+                <div id="message-list"
+                     class="text-center bubble-container">
+
+                    <h5 id="no-messages"
+                        ng-hide="model.messages.length > 0">
+                        {{'MESSAGES_NO_MESSAGES' | translate}}
+                    </h5>
+
+                    <ul class="list-unstyled"
+                        ng-show="model.messages.length > 0">
+                        <li id="message-items"
+                            ng-repeat="message in model.messages">
+                            <div class="bubble"
+                                 ng-class="{
+                                    'bubble-left': message.from.id === model.thread.id,
+                                    'bubble-right': message.from.id !== model.thread.id,
+                                    'bubble-left-marked': message.from.id === model.thread.id && message.isRead === false,
+                                    'bubble-right-marked': message.from.id !== model.thread.id && message.isRead === false
+                                    }">
+                                <p class="text-left">
+                                    <em>{{message.title}}</em>{{delimiter(message)}}
+                                    {{'MESSAGES_RECEIVED' | translate}}
+                                    {{message.sendDate | amDateFormat:'L'}}<br/>
+                                    {{message.text}}
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <nav class="row text-center">
+                    <button id="new-message-button"
+                            class="button"
+                            ng-click="newMessage()">
+                        {{ 'MESSAGES_NEW_MESSAGE_BUTTON' | translate }}
+                    </button>
+                </nav>
+
+            </div>
+
+        </div>
+    </div>
+</section>

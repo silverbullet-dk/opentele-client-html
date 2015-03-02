@@ -1,0 +1,72 @@
+<section id="send-reply-container"
+         class="body-row-color"
+         ng-controller="SendReplyCtrl">
+    <div class="send-reply-confirm" ng-show="model.showConfirm">
+        <div class="sub-container">
+
+            <div class="text-center send-reply-container">
+
+                <h2 id="send-reply-text">{{'END_QUESTION_TEXT' | translate}}</h2>
+
+                <div id="send-reply-buttons"
+                     class="row text-center">
+                    <button id="send-reply-no-button"
+                            class="button"
+                            ng-click="model.skipSendClick()">{{ 'No' | translate}}</button>
+                    <button id="send-reply-yes-button"
+                            class="button"
+                            ng-click="model.sendClick()">{{ 'Yes' | translate}}</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="send-reply-uploading" ng-show="model.showUploading">
+        <div class="row text-center">
+
+            <div class="text-center send-reply-container">
+
+                <h2>{{'UPLOADING_WAIT_TEXT' | translate}}</h2>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="send-reply-ack" ng-show="model.showAcknowledge">
+        <div class="row text-center">
+
+            <div class="text-center send-reply-container">
+
+                <h2 id="send-reply-ack-text">{{'SEND_REPLIES_ACK_TEXT' | translate}}</h2>
+
+                <div id="ack-button"
+                     class="row text-center">
+                    <button id="ack-ok-button"
+                            class="button"
+                            ng-click="model.ackOkClick()">{{ 'OK' | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="send-reply-failed" ng-show="model.showFailed">
+        <div class="row text-center">
+
+            <div class="text-center send-reply-container">
+
+                <h5 id="send-reply-failed-text" class="text-center error-message">{{'UPLOAD_FAILED_TEXT' | translate}}</h5>
+
+                <div id="failed-buttons"
+                     class="row text-center">
+                    <button id="failed-cancel-button"
+                            class="button"
+                            ng-click="model.cancelRetryClick()">{{ 'Cancel' | translate}}</button>
+                    <button id="failed-retry-button"
+                            class="button"
+                            ng-click="model.sendClick()">{{ 'Retry' | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

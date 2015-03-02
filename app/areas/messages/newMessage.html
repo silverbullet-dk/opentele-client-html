@@ -1,0 +1,57 @@
+<section id="new-message-container"
+         class="body-row-color">
+    <div class="container">
+        <div class="sub-container"
+             ng-controller="NewMessageCtrl">
+
+            <div class="text-center new-message-container">
+
+                <h2>{{'MESSAGES_NEW_MESSAGE' | translate}}</h2>
+
+                <h5 class="text-center error-message">
+                    {{model.errorMessage}}
+                </h5>
+
+                <form id="new-message-form"
+                      name="newMessageForm"
+                      class="text-center"
+                      ng-submit="submit()">
+                    <fieldset class="new-message-fields text-center inline-block
+                        no-margin">
+
+                        <div class="text-center">
+                            <label for="message">
+                                {{'MESSAGES_FORM_MESSAGE' | translate}}
+                            </label>
+                            <div class="block"
+                                 ng-show="newMessageForm.message.$dirty &&
+                             newMessageForm.message.$invalid">
+                                <small id="input-message-error-message"
+                                       class="error-message"
+                                       ng-show="newMessageForm.message.$error.required">
+                                    {{'MESSAGES_FORM_MESSAGE_REQUIRED' | translate}}
+                                </small>
+                            </div>
+                            <textarea id="message"
+                                      name="message"
+                                      rows="8"
+                                      ng-model="model.message"
+                                      required>
+                            </textarea>
+                        </div>
+
+                        <input id="submit"
+                               class="button block"
+                               type="submit"
+                               ng-disabled="newMessageForm.topic.$invalid ||
+                               newMessageForm.message.$invalid"
+                               value="{{'MESSAGES_FORM_SEND_BUTTON' | translate}}"
+                                />
+
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

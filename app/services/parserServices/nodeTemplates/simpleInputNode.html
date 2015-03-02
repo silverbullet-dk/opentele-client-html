@@ -1,0 +1,25 @@
+<h2>{{nodeModel.heading}}</h2>
+<form name="inputForm" class="text-center">
+	<fieldset class="questionnaire-fields">
+		<div>
+			<label for="value">{{ "#field_name#" | translate }}</label>
+			<input id="value"
+				type="number"
+				min="0"
+				max="999"
+				name="value"
+                autocomplete="off"
+				ng-model="nodeModel.measurement" required ng-pattern="#pattern#"/>
+		</div>
+		<div ng-show="inputForm.value.$dirty && inputForm.value.$invalid">
+			<small class="error-message"
+				ng-show="inputForm.value.$error.required">
+				{{ "#field_name#_ERROR_MESSAGE" | translate }}
+			</small>
+			<small class="error-message"
+				ng-show="inputForm.value.$error.pattern">
+				{{ "#field_name#_ERROR_MESSAGE" | translate }}
+			</small>
+		</div>
+	</fieldset>
+</form>
