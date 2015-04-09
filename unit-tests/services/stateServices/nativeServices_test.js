@@ -23,7 +23,7 @@
                     passedArgument = questionnaireName;
                 },
                 getQuestionnairesToHighlight: function() {
-                    return '["Blodsukker (manuel)", "Proteinindhold i urin"]';
+                    return "[\"Blodsukker (manuel)\", \"Proteinindhold i urin\"]";
                 }
             };
             window = {

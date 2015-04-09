@@ -34,7 +34,8 @@
         var getQuestionnairesToHighlight = function() {
             var native = $window.Native;
             if (exists(native) && exists(native.getQuestionnairesToHighlight)) {
-                return JSON.parse(native.getQuestionnairesToHighlight());
+                var questionnairesToHighlight = native.getQuestionnairesToHighlight();
+                return JSON.parse(questionnairesToHighlight);
             }
             return [];
         };
